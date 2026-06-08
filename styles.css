@@ -90,16 +90,15 @@ a {
 main {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 2.4rem 1.4rem 5rem;
+  padding: 1.4rem 1.4rem 4.5rem;
 }
 
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(360px, 480px);
-  align-items: center;
+  align-items: start;
   gap: clamp(2.5rem, 6vw, 5rem);
-  min-height: min(720px, calc(100vh - 92px));
-  padding: 2.5rem 0 4rem;
+  padding: 1.5rem 0 3rem;
 }
 
 .eyebrow,
@@ -219,7 +218,8 @@ h1 {
 }
 
 .clinical-work {
-  padding: 3.8rem 0 2.5rem;
+  scroll-margin-top: 90px;
+  padding: 2.2rem 0 2.5rem;
   border-top: 1px solid rgba(22, 35, 40, 0.08);
 }
 
