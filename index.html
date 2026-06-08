@@ -68,39 +68,47 @@
           <p class="section-kicker">Clinical Work</p>
           <h2>Clinical work and patient-care moments.</h2>
         </div>
-        <div class="work-carousel">
-          <article class="work-slide" id="work-ultrasound">
-            <div class="work-image">
-              <img src="assets/IMG-20260608-WA0002.jpg" alt="Dr. Raksha Gajbhiye reviewing an ultrasound scan" />
+        <div class="work-carousel" data-carousel>
+          <div class="work-viewport">
+            <div class="work-track">
+              <article class="work-slide">
+                <div class="work-image">
+                  <img src="assets/IMG-20260608-WA0002.jpg" alt="Dr. Raksha Gajbhiye reviewing an ultrasound scan" />
+                </div>
+                <div class="work-caption">
+                  <span>Ultrasound Review</span>
+                  <strong>Focused fetal assessment and diagnostic attention.</strong>
+                </div>
+              </article>
+              <article class="work-slide">
+                <div class="work-image">
+                  <img src="assets/IMG-20260608-WA0000.jpg" alt="Clinical ultrasound consultation in progress" />
+                </div>
+                <div class="work-caption">
+                  <span>Patient Care</span>
+                  <strong>Calm support through scan-based consultation.</strong>
+                </div>
+              </article>
+              <article class="work-slide">
+                <div class="work-image">
+                  <img src="assets/IMG-20260608-WA0001.jpg" alt="Dr. Raksha Gajbhiye supporting a newborn delivery" />
+                </div>
+                <div class="work-caption">
+                  <span>Delivery Support</span>
+                  <strong>Hands-on obstetric care in critical moments.</strong>
+                </div>
+              </article>
             </div>
-            <div class="work-caption">
-              <span>Ultrasound Review</span>
-              <strong>Focused fetal assessment and diagnostic attention.</strong>
+          </div>
+          <div class="work-controls" aria-label="Clinical work carousel controls">
+            <button class="carousel-button" type="button" data-carousel-prev aria-label="Previous clinical work photo">&lt;</button>
+            <div class="work-dots" aria-label="Clinical work carousel slides">
+              <button type="button" data-carousel-dot aria-label="Show ultrasound review photo" aria-current="true"></button>
+              <button type="button" data-carousel-dot aria-label="Show patient care photo"></button>
+              <button type="button" data-carousel-dot aria-label="Show delivery support photo"></button>
             </div>
-          </article>
-          <article class="work-slide" id="work-consultation">
-            <div class="work-image">
-              <img src="assets/IMG-20260608-WA0000.jpg" alt="Clinical ultrasound consultation in progress" />
-            </div>
-            <div class="work-caption">
-              <span>Patient Care</span>
-              <strong>Calm support through scan-based consultation.</strong>
-            </div>
-          </article>
-          <article class="work-slide" id="work-delivery">
-            <div class="work-image">
-              <img src="assets/IMG-20260608-WA0001.jpg" alt="Dr. Raksha Gajbhiye supporting a newborn delivery" />
-            </div>
-            <div class="work-caption">
-              <span>Delivery Support</span>
-              <strong>Hands-on obstetric care in critical moments.</strong>
-            </div>
-          </article>
-        </div>
-        <div class="work-dots" aria-label="Clinical work carousel slide links">
-          <a href="#work-ultrasound" aria-label="View ultrasound review"></a>
-          <a href="#work-consultation" aria-label="View patient care"></a>
-          <a href="#work-delivery" aria-label="View delivery support"></a>
+            <button class="carousel-button" type="button" data-carousel-next aria-label="Next clinical work photo">&gt;</button>
+          </div>
         </div>
       </section>
 
@@ -228,5 +236,6 @@
       <p>Profile page corrected using publicly available medical sources.</p>
       <a href="#top">Back to top</a>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
