@@ -28,6 +28,10 @@ body {
   line-height: 1.6;
 }
 
+img {
+  max-width: 100%;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -89,11 +93,11 @@ main {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.07fr) minmax(320px, 0.72fr);
+  grid-template-columns: minmax(0, 1.12fr) minmax(300px, 0.58fr);
   align-items: center;
-  gap: 3rem;
-  min-height: calc(100vh - 96px);
-  padding: 2rem 0 4rem;
+  gap: clamp(2rem, 6vw, 4.5rem);
+  min-height: min(760px, calc(100vh - 96px));
+  padding: 2rem 0 3rem;
 }
 
 .eyebrow,
@@ -117,8 +121,8 @@ p {
 h1 {
   max-width: 860px;
   margin-bottom: 1.2rem;
-  font-size: clamp(3.2rem, 8vw, 7.7rem);
-  line-height: 0.9;
+  font-size: clamp(3.1rem, 7vw, 6.9rem);
+  line-height: 0.92;
   letter-spacing: 0;
 }
 
@@ -166,14 +170,18 @@ h1 {
 .profile-panel {
   display: grid;
   gap: 1rem;
+  justify-items: center;
 }
 
 .portrait-wrap {
   overflow: hidden;
+  width: min(100%, 230px);
   aspect-ratio: 4 / 5;
+  margin: 0 auto 1.2rem;
   border-radius: 8px;
-  background: #dde9e8;
-  box-shadow: var(--shadow);
+  border: 1px solid rgba(23, 32, 42, 0.1);
+  background: linear-gradient(135deg, #e8f1ef, #fff7ee);
+  box-shadow: 0 18px 44px rgba(23, 32, 42, 0.16);
 }
 
 .portrait {
@@ -195,8 +203,20 @@ h1 {
 }
 
 .profile-card {
+  width: min(100%, 360px);
   border-radius: 8px;
-  padding: 1.35rem;
+  padding: clamp(1.15rem, 3vw, 1.55rem);
+  text-align: center;
+  position: relative;
+}
+
+.profile-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border-top: 4px solid var(--gold);
+  pointer-events: none;
 }
 
 .profile-card h2 {
@@ -218,6 +238,121 @@ h1 {
   color: var(--muted);
   font-weight: 700;
   background: var(--paper);
+}
+
+.work-showcase {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.42fr) minmax(0, 1fr);
+  align-items: stretch;
+  gap: clamp(1.2rem, 4vw, 2rem);
+  margin: 0 0 1.3rem;
+  padding: 1.15rem;
+  border: 1px solid rgba(23, 32, 42, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 20px 60px rgba(23, 32, 42, 0.08);
+}
+
+.work-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(0.2rem, 2vw, 1rem);
+}
+
+.work-intro h2 {
+  margin-bottom: 0;
+  font-size: clamp(1.55rem, 3vw, 2.55rem);
+  line-height: 1.05;
+}
+
+.carousel-shell {
+  min-width: 0;
+}
+
+.carousel-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(280px, 76%);
+  gap: 1rem;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  scrollbar-width: thin;
+  padding-bottom: 0.5rem;
+}
+
+.carousel-slide {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--ink);
+  scroll-snap-align: start;
+  box-shadow: 0 16px 40px rgba(23, 32, 42, 0.12);
+}
+
+.carousel-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(1.04) contrast(1.02);
+}
+
+.carousel-slide::after {
+  content: "";
+  position: absolute;
+  inset: 42% 0 0;
+  background: linear-gradient(180deg, transparent, rgba(23, 32, 42, 0.76));
+  pointer-events: none;
+}
+
+.slide-caption {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 1;
+  color: var(--white);
+}
+
+.slide-caption span {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: #f4cf74;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.slide-caption strong {
+  display: block;
+  max-width: 520px;
+  font-size: clamp(1.2rem, 2.4vw, 2rem);
+  line-height: 1.08;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.55rem;
+  padding-top: 0.75rem;
+}
+
+.carousel-dots a {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(23, 32, 42, 0.2);
+}
+
+.carousel-dots a:hover,
+.carousel-dots a:focus-visible {
+  background: var(--teal);
+  outline: none;
 }
 
 .stats-band {
@@ -408,6 +543,19 @@ footer a {
 
   .profile-panel {
     max-width: 520px;
+    justify-items: start;
+  }
+
+  .profile-card {
+    text-align: left;
+  }
+
+  .portrait-wrap {
+    margin-inline: 0;
+  }
+
+  .work-showcase {
+    grid-template-columns: 1fr;
   }
 
   .stats-band,
@@ -434,6 +582,18 @@ footer a {
 
   h1 {
     font-size: 3.45rem;
+  }
+
+  .portrait-wrap {
+    width: 190px;
+  }
+
+  .carousel-track {
+    grid-auto-columns: 88%;
+  }
+
+  .carousel-slide {
+    min-height: 340px;
   }
 
   .hero-actions,
