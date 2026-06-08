@@ -22,7 +22,9 @@ body {
   margin: 0;
   font-family: "Inter", Arial, sans-serif;
   color: var(--ink);
-  background: linear-gradient(180deg, #fbfcfc 0%, #eef5f3 48%, #f9fbfa 100%);
+  background:
+    linear-gradient(90deg, rgba(15, 119, 116, 0.06), transparent 38%),
+    linear-gradient(180deg, #fbfcfc 0%, #eef5f3 48%, #f9fbfa 100%);
   line-height: 1.6;
 }
 
@@ -88,16 +90,16 @@ a {
 main {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 2rem 1.4rem 5rem;
+  padding: 2.4rem 1.4rem 5rem;
 }
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 400px);
+  grid-template-columns: minmax(0, 0.95fr) minmax(360px, 480px);
   align-items: center;
-  gap: clamp(2rem, 6vw, 4.5rem);
-  min-height: min(680px, calc(100vh - 92px));
-  padding: 1.5rem 0 3rem;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  min-height: min(720px, calc(100vh - 92px));
+  padding: 2.5rem 0 4rem;
 }
 
 .eyebrow,
@@ -120,15 +122,15 @@ p {
 }
 
 h1 {
-  max-width: 780px;
+  max-width: 720px;
   margin-bottom: 1.2rem;
-  font-size: clamp(3.2rem, 7vw, 6.8rem);
-  line-height: 0.94;
+  font-size: clamp(3rem, 6.2vw, 6rem);
+  line-height: 0.96;
   letter-spacing: 0;
 }
 
 .lede {
-  max-width: 720px;
+  max-width: 680px;
   color: #354650;
   font-size: clamp(1.1rem, 2vw, 1.34rem);
 }
@@ -169,11 +171,14 @@ h1 {
 }
 
 .profile-panel {
+  width: 100%;
+  max-width: 480px;
+  justify-self: end;
   overflow: hidden;
   border: 1px solid rgba(22, 35, 40, 0.12);
   border-radius: 8px;
   background: var(--white);
-  box-shadow: var(--shadow);
+  box-shadow: 0 28px 80px rgba(22, 35, 40, 0.16);
 }
 
 .portrait-frame {
@@ -189,7 +194,7 @@ h1 {
 }
 
 .profile-summary {
-  padding: 1.25rem;
+  padding: 1.35rem;
 }
 
 .profile-summary h2 {
@@ -214,7 +219,8 @@ h1 {
 }
 
 .clinical-work {
-  padding: 1rem 0 2rem;
+  padding: 3.8rem 0 2.5rem;
+  border-top: 1px solid rgba(22, 35, 40, 0.08);
 }
 
 .compact-heading {
@@ -226,9 +232,9 @@ h1 {
 }
 
 .compact-heading h2 {
-  max-width: 720px;
+  max-width: 680px;
   margin-bottom: 0;
-  font-size: clamp(1.8rem, 3.4vw, 3rem);
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
   line-height: 1.04;
 }
 
@@ -256,8 +262,8 @@ h1 {
 .work-image {
   display: grid;
   place-items: center;
-  aspect-ratio: 3 / 4;
-  background: #eef4f4;
+  aspect-ratio: 4 / 5;
+  background: #edf3f3;
 }
 
 .work-image img {
@@ -267,7 +273,7 @@ h1 {
 }
 
 .work-caption {
-  min-height: 112px;
+  min-height: 104px;
   padding: 1rem;
 }
 
